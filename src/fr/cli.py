@@ -13,7 +13,7 @@ def lr_api(l):
         'length': l,
     }
 
-    response = requests.get('http://localhost:8001/get_weight', params=params, headers=headers)    
+    response = requests.get('http://ec2-13-124-16-187.ap-northeast-2.compute.amazonaws.com:8080/get_knn/get_weight', params=params, headers=headers)
     j = response.json()
     r = j.get("weight")
     return r
@@ -29,8 +29,9 @@ def knn_api(l,w,n):
         'neighbor': n,
     }
 
-    response = requests.get('http://localhost:8002/fish', params=params, headers=headers)
+    response = requests.get('http://ec2-13-124-16-187.ap-northeast-2.compute.amazonaws.com:8080/fish/fish', params=params, headers=headers)
     j = response.json()
+    
     r = j.get("prediction")
     return r
 
@@ -40,7 +41,8 @@ def read_root():
 
 @app.get("/predict")
 def predict():
-    length =3
+
+    length = float(input("길이를 입력하세요"))
 
     neighbor = 5
 
