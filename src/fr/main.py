@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-import requests
-from fishregression.model.manager import get_model_path
+from fr.model.manager import get_model_path
 import pickle
 app = FastAPI()
 
@@ -30,7 +29,7 @@ def get_weight(length: float):
 
 
     fish_model = get_model()
-    weight = fish_model.predict([[length**2, length]])[0]
+    weight = fish_model.predict([[length]])[0]
 
     return {
                 "length": length,
