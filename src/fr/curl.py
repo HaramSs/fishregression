@@ -14,7 +14,7 @@ def get_weight(l, url="http://localhost:8001/fish"):
     weight = j.get("weight")
     return weight
 
-def get_knn(length, k, url="http://localhost:8002/fish"):
+def get_knn(length, url="http://localhost:8002/fish"):
     headers = {
         'accept': 'application/json',
     }
@@ -22,7 +22,6 @@ def get_knn(length, k, url="http://localhost:8002/fish"):
     params = {
         'length': length,
         'weight' : w,
-        'k' : k
     }
 
     response = requests.get(url, params=params, headers=headers)
