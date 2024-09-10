@@ -1,6 +1,6 @@
 [project]
 name = "fr"
-version = "0.2.2"
+version = "0.2.4"
 description = "from sklearn.linear_model import LinearRegression 2 FastAPI"
 authors = [
     {name = "HaramSs", email = "haram8274@gmail.com"},
