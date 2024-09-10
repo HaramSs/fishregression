@@ -14,7 +14,8 @@ def get_weight(l, url="http://localhost:8001/fish"):
     weight = j.get("weight")
     return weight
 
-def get_knn(length, url="http://localhost:8002/fish"):
+def get_knn(url="http://localhost:8002/fish"):
+    length = input(":whale2:물고기의 길이를 입력하세요")
     headers = {
         'accept': 'application/json',
     }
