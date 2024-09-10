@@ -1,6 +1,6 @@
 import requests
 
-def get_weight(l, url="http://localhost:8001/fish"):
+def get_weight(l, url="http://172.31.12.195:8001/fish"):
     headers = {
         'accept': 'application/json',
     }
@@ -14,8 +14,8 @@ def get_weight(l, url="http://localhost:8001/fish"):
     weight = j.get("weight")
     return weight
 
-def get_knn(url="http://localhost:8002/fish"):
-    length = input(":whale2:물고기의 길이를 입력하세요")
+def get_knn(url="http://172.31.12.195:8002/fish"):
+    length = input("🐋물고기의 길이를 입력하세요")
     headers = {
         'accept': 'application/json',
     }
