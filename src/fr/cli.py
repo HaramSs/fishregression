@@ -13,7 +13,7 @@ def lr_api(l):
         'length': l,
     }
 
-    response = requests.get('localhost:8080/get_knn/get_weight', params=params, headers=headers)
+    response = requests.get('http://localhost:8080/get_knn/get_weight', params=params, headers=headers)
     j = response.json()
     r = j.get("weight")
     return r
@@ -29,7 +29,7 @@ def knn_api(l,w,n):
         'neighbor': n,
     }
 
-    response = requests.get('localhost', params=params, headers=headers)
+    response = requests.get('http://localhost:8080/fish/fish', params=params, headers=headers)
     j = response.json()
     
     r = j.get("prediction")
